@@ -1,0 +1,29 @@
+{
+  "name": "wnd-string-format",
+  "version": "0.0.1",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-jshint": "~0.7.2",
+    "jshint-stylish": "^0.4.0",
+    "load-grunt-tasks": "^0.4.0"
+  },
+  "description": "wondersgroup string format",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leornado/wnd-string-format.git"
+  },
+  "keywords": [
+    "string",
+    "format"
+  ],
+  "author": "leornado",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leornado/wnd-string-format/issues"
+  },
+  "homepage": "https://github.com/leornado/wnd-string-format"
+}
