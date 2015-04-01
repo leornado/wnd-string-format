@@ -58,7 +58,17 @@ module.exports = function (grunt) {
         files: '<%= jshint.lib_test.src %>',
         tasks: ['jshint:lib_test']
       }
+    },
+    karma: {
+      unit: {
+        configFile: 'karma.conf.js',
+        singleRun: true
+      }
     }
+  });
+
+  grunt.registerTask('test', 'Run tests on singleRun karma server', function () {
+    grunt.task.run('karma');
   });
 
   // Default task
