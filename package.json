@@ -1,6 +1,6 @@
 {
   "name": "wnd-string-format",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.2",
@@ -25,5 +25,5 @@
   "bugs": {
     "url": "https://github.com/leornado/wnd-string-format/issues"
   },
-  "homepage": "https://github.com/leornado/wnd-string-format"
+  "homepage": "http://leornado.github.io/wnd-string-format"
 }
