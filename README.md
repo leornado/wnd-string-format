@@ -11,3 +11,4 @@ This automatic page generator is the easiest way to create beautiful pages for a
  // result: "I'm leornado. I'm 30."
 ```
 
+[Home Page!](http://leornado.github.io/wnd-string-format)
