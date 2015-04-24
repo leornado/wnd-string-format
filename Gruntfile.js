@@ -25,7 +25,7 @@ module.exports = function (grunt) {
       },
       dist: {
         src: ['src/wnd-string-format.js'],
-        dest: 'dist/wnd-string-format-<%= pkg.version %>.js'
+        dest: 'dist/wnd-string-format.js'
       }
     },
     uglify: {
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
       },
       dist: {
         src: '<%= concat.dist.dest %>',
-        dest: 'dist/wnd-string-format-<%= pkg.version %>.min.js'
+        dest: 'dist/wnd-string-format.min.js'
       }
     },
     jshint: {
