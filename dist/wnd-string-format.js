@@ -1,4 +1,4 @@
-/*! wnd-string-format - v0.0.5 - 2015-04-24
+/*! wnd-string-format - v0.0.6 - 2015-05-06
 * http://leornado.github.io/wnd-string-format
 * Copyright (c) 2015 leornado; Licensed MIT */
 'use strict';
@@ -16,27 +16,44 @@
     return toString(o) === '[object Object]';
   };
 
+  var replaceByObject = function (s, o) {
+    for (var key in o) {
+      if (o[key] !== undefined) {
+        var reg = new RegExp('({' + key + '})', 'g');
+        s = s.replace(reg, o[key]);
+      }
+    }
+    return s;
+  };
+
+  var replaceByArray = function (s, array) {
+    for (var i = 0; i < array.length; i++) {
+      if (array[i] !== undefined) {
+        var reg = new RegExp('({)' + i + '(})', 'g');
+        var val = array[i];
+        if (isObject(val)) {
+          val = JSON.stringify(val);
+        }
+        s = s.replace(reg, val);
+      }
+    }
+    return s;
+  };
+
   String.prototype.format = function (args) {
-    var result = this, reg;
+    var result = this;
     if (arguments.length <= 0) {
       return result;
     }
 
     if (arguments.length === 1 && isObject(args)) {
-      for (var key in args) {
-        if (args[key] !== undefined) {
-          reg = new RegExp('({' + key + '})', 'g');
-          result = result.replace(reg, args[key]);
-        }
+      result = replaceByObject(result, args);
+      if (result === this) {
+        result = replaceByArray(result, [args]);
       }
     } else {
       var array = arguments.length === 1 && isArray(args) ? args : arguments;
-      for (var i = 0; i < array.length; i++) {
-        if (array[i] !== undefined) {
-          reg = new RegExp('({)' + i + '(})', 'g');
-          result = result.replace(reg, array[i]);
-        }
-      }
+      result = replaceByArray(result, array);
     }
     return result;
   };

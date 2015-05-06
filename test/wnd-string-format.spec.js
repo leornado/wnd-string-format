@@ -16,6 +16,9 @@ describe('string.format', function () {
   it('format by json object', function () {
     result = 'I\'m {name}. I\'m {age}.'.format({name: 'leornado', age: 30});
     expect(result).toBe('I\'m leornado. I\'m 30.');
+
+    result = 'I\'m {0}.'.format({name: 'leornado', age: 30});
+    expect(result).toBe('I\'m {"name":"leornado","age":30}.');
   });
 
   it('format by json object contains quots', function () {
