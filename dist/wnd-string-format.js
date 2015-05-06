@@ -1,4 +1,4 @@
-/*! wnd-string-format - v0.0.6 - 2015-05-06
+/*! wnd-string-format - v0.0.8 - 2015-05-06
 * http://leornado.github.io/wnd-string-format
 * Copyright (c) 2015 leornado; Licensed MIT */
 'use strict';
@@ -48,7 +48,7 @@
 
     if (arguments.length === 1 && isObject(args)) {
       result = replaceByObject(result, args);
-      if (result === this) {
+      if (result === this.toString()) {
         result = replaceByArray(result, [args]);
       }
     } else {

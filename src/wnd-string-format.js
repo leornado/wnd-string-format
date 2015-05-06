@@ -45,7 +45,7 @@
 
     if (arguments.length === 1 && isObject(args)) {
       result = replaceByObject(result, args);
-      if (result === this) {
+      if (result === this.toString()) {
         result = replaceByArray(result, [args]);
       }
     } else {
