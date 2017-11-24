@@ -1,6 +1,6 @@
-/*! wnd-string-format - v0.0.8 - 2015-05-06
+/*! wnd-string-format - v0.0.9 - 2017-11-25
 * http://leornado.github.io/wnd-string-format
-* Copyright (c) 2015 leornado; Licensed MIT */
+* Copyright (c) 2017 leornado; Licensed MIT */
 'use strict';
 (function () {
 
@@ -55,7 +55,7 @@
       var array = arguments.length === 1 && isArray(args) ? args : arguments;
       result = replaceByArray(result, array);
     }
-    return result;
+    return typeof(result) === 'string' ? result : result.toString();
   };
 
 })();

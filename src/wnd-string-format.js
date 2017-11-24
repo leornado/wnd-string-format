@@ -52,7 +52,7 @@
       var array = arguments.length === 1 && isArray(args) ? args : arguments;
       result = replaceByArray(result, array);
     }
-    return result;
+    return typeof(result) === 'string' ? result : result.toString();
   };
 
 })();
